@@ -1,0 +1,24 @@
+{
+    "name": "Jupyter",
+    "version": "0.0.3",
+    "slug": "jupyter",
+    "description": "Explore your home with jupyter",
+    "startup": "application",
+    "url": "https://github.com/d0ugal/hassio-jupyter",
+    "webui": "http://[HOST]:[PORT:8889]",
+    "boot": "auto",
+    "ports": {
+	"8889/tcp": 8889
+    },
+    "hassio_api": true,
+    "hassio_role": "admin",
+    "homeassistant_api": true,
+    "map": [
+        "backup",
+	"config"
+    ],
+    "options": {
+    },
+    "schema": {
+    }
+}
