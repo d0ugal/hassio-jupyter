@@ -28,6 +28,22 @@ jobs:
       env: TOXENV=docker-build ARCH=armhf
 
     - stage: release
+      env: ARCH=aarch64
+      script:
+        - echo "$DOCKER_PASSWORD" | docker login -u ${DOCKER_USERNAME} --password-stdin
+        - bash scripts/docker-push.sh ${TRAVIS_BUILD_DIR}
+    - stage: release
+      env: ARCH=i386
+      script:
+        - echo "$DOCKER_PASSWORD" | docker login -u ${DOCKER_USERNAME} --password-stdin
+        - bash scripts/docker-push.sh ${TRAVIS_BUILD_DIR}
+    - stage: release
+      env: ARCH=amd64
+      script:
+        - echo "$DOCKER_PASSWORD" | docker login -u ${DOCKER_USERNAME} --password-stdin
+        - bash scripts/docker-push.sh ${TRAVIS_BUILD_DIR}
+    - stage: release
+      env: ARCH=armhf
       script:
         - echo "$DOCKER_PASSWORD" | docker login -u ${DOCKER_USERNAME} --password-stdin
         - bash scripts/docker-push.sh ${TRAVIS_BUILD_DIR}

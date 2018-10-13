@@ -12,5 +12,5 @@ docker run -it --rm --privileged --name "jupyter" \
     --image "d0ugal/hassio-jupyter-{arch}" \
     --target "jupyter" \
     --git \
-    --all \
+    --${ARCH:-all} \
     --push
