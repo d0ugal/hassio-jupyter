@@ -10,8 +10,8 @@ docker run \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v "$repo":/docker \
   hassioaddons/build-env:latest \
-  --image "d0ugal/hassio-dropbox-upload-{arch}" \
+  --image "d0ugal/hassio-jupyter-{arch}" \
   --cache-tag test \
   --git \
-  --target dropbox-upload \
+  --target jupyter \
   --${ARCH:-all}
