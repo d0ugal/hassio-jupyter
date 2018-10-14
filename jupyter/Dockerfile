@@ -8,9 +8,12 @@ RUN apk add --no-cache tini python3 libstdc++ openblas freetype wget ca-certific
 RUN python3 -m ensurepip && rm -r /usr/lib/python*/ensurepip
 RUN pip3 install --upgrade pip setuptools
 RUN apk add python3-dev make cmake clang clang-dev g++ linux-headers openblas-dev freetype-dev libffi-dev openssl-dev
-RUN pip3 install --upgrade numpy
-RUN pip3 install --upgrade matplotlib jupyter ipywidgets
-RUN pip3 install --upgrade pandas pymysql sqlalchemy requests fbprophet seaborn homeassistant calmap
+
+RUN pip3 install --upgrade numpy matplotlib jupyter ipywidgets pandas pymysql sqlalchemy requests homeassistant
+
+# Some libraries I'd like to add by default... but the build time is too slow.
+# seaborn, fbprophet, calmap
+
 RUN jupyter nbextension enable --py widgetsnbextension
 RUN echo "c.NotebookApp.token = ''" > /root/.jupyter/jupyter_notebook_config.py
 
