@@ -13,6 +13,7 @@
     "hassio_api": true,
     "hassio_role": "admin",
     "homeassistant_api": true,
+    "image": "d0ugal/hassio-jupyter-{arch}",
     "map": [
         "backup",
 	"config"
