@@ -14,4 +14,5 @@ docker run \
   --cache-tag test \
   --git \
   --target jupyter \
+  --parallel \
   --${ARCH:-all}

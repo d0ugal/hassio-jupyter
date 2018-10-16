@@ -20,5 +20,11 @@
     "options": {
     },
     "schema": {
+    },
+    "build_from": {
+        "amd64": "d0ugal/docker-alpine-jupyter-notebook-amd64",
+        "armhf": "d0ugal/docker-alpine-jupyter-notebook-armhf",
+        "i386": "d0ugal/docker-alpine-jupyter-notebook-i386",
+        "aarch64": "d0ugal/docker-alpine-jupyter-notebook-aarch64"
     }
 }
