@@ -11,3 +11,7 @@ RUN apk update && apk upgrade \
     && apk del .build-deps \
     && rm -r /root/.cache
 
+EXPOSE 8889
+WORKDIR /data
+ENTRYPOINT ["/sbin/tini", "--"]
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8889", "--no-browser", "--allow-root"]
