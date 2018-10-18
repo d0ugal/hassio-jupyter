@@ -8,6 +8,7 @@ RUN apk update && apk upgrade \
     && pip3 install --upgrade pip setuptools \
     && apk add --no-cache --virtual .build-deps python3-dev make cmake clang clang-dev g++ linux-headers openblas-dev freetype-dev libffi-dev openssl-dev \
     && pip3 install --upgrade pymysql sqlalchemy requests homeassistant \
+    && echo "c.NotebookApp.tornado_settings = { 'headers': { 'Content-Security-Policy': ''}}" > /root/.jupyter/jupyter_notebook_config.py \
     && apk del .build-deps \
     && rm -r /root/.cache
 
