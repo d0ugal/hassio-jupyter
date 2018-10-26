@@ -11,7 +11,6 @@ docker run \
   -v "$repo":/docker \
   hassioaddons/build-env:latest \
   --image "d0ugal/hassio-jupyter-{arch}" \
-  --cache-tag test \
   --git \
   --target jupyter \
   --parallel \
