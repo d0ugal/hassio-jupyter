@@ -18,15 +18,24 @@ WORKDIR /data
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8889", "--no-browser", "--allow-root"]
 
+ARG BUILD_ARCH
+ARG BUILD_DATE
+ARG BUILD_REF
+ARG BUILD_VERSION
+
 LABEL \
     io.hass.name="Jupyter" \
     io.hass.description="Create and share documents that contain live code, equations, visualizations and narrative text" \
+    io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
+    io.hass.version=${BUILD_VERSION} \
     maintainer="Dougal Matthews <dougal@dougalmatthews.com>" \
     org.label-schema.description="Create and share documents that contain live code, equations, visualizations and narrative text" \
+    org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="Jupyter" \
     org.label-schema.schema-version="1.0" \
     org.label-schema.url="https://github.com/d0ugal/hassio-jupyter/" \
     org.label-schema.usage="https://github.com/d0ugal/hassio-jupyter/" \
+    org.label-schema.vcs-ref=${BUILD_REF} \
     org.label-schema.vcs-url="https://github.com/d0ugal/hassio-jupyter/" \
     org.label-schema.vendor="Dougal Matthews"
