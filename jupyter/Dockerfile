@@ -7,7 +7,7 @@ RUN apk update && apk upgrade \
     && apk add --no-cache tini python3 libstdc++ openblas freetype wget ca-certificates \
     && pip3 install --upgrade pip setuptools \
     && apk add --no-cache --virtual .build-deps python3-dev make cmake clang clang-dev g++ linux-headers openblas-dev freetype-dev libffi-dev openssl-dev \
-    && pip3 install --upgrade pymysql sqlalchemy requests homeassistant influxdb \
+    && pip3 install --upgrade pymysql sqlalchemy requests homeassistant influxdb folium \
     && echo "c.NotebookApp.tornado_settings = { 'headers': { 'Content-Security-Policy': ''}}" >> /root/.jupyter/jupyter_notebook_config.py \
     && echo "c.MappingKernelManager.cull_idle_timeout = 600"  >> /root/.jupyter/jupyter_notebook_config.py \
     && apk del .build-deps \
