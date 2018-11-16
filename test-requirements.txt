@@ -1,6 +1,0 @@
-black
-isort
-pyflakes
-pytest
-pytest-cov
-requests-mock
